@@ -79,11 +79,17 @@ The application will send verification emails to users after registration.
 You can test all the API endpoints using the provided Postman collection. [Download the Postman collection here](https://github.com/AarambhDevHub/rust-backend-axum/blob/main/postman_collection.json) and import it into Postman.
 
 API Endpoints:
+
 POST `/api/auth/register`: Register a new user
+
 POST `/api/auth/login`: Login with an existing user
+
 GET `/api/auth/forgot-password`: Request password reset
+
 POST `/api/auth/reset-password`: Reset user password
+
 GET `/api/auth/verify`: Verify email with token
+
 GET `/api/users/me`: Get current user profile (JWT required)
 
 ## ⚙️ Configuration
