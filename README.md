@@ -125,5 +125,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## ✨ Acknowledgements
 
 [Axum](https://github.com/tokio-rs/axum) for building powerful, fast APIs in Rust.
+
 [PostgreSQL](https://www.postgresql.org/) for reliable database management.
+
 [SQLx](https://github.com/launchbadge/sqlx) for async SQL in Rust.
