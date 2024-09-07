@@ -27,7 +27,7 @@ To run this project, you will need:
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/rust-backend-axum.git
+    git clone https://github.com/AarambhDevHub/rust-backend-axum.git
     cd rust-backend-axum
     ```
 
