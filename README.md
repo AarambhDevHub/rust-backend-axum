@@ -1,5 +1,7 @@
 # Rust Backend with Axum, PostgreSQL, & Email Verification
 
+[![Watch the video](https://img.youtube.com/vi/M0wi7V1rP4Y/maxresdefault.jpg)](https://youtu.be/M0wi7V1rP4Y)
+
 This repository contains the source code for a fully functional backend application built with Rust, using the [Axum](https://github.com/tokio-rs/axum) framework. It includes user authentication, email verification, and a connection to a PostgreSQL database.
 
 ## 🛠️ Features
