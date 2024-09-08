@@ -137,3 +137,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 [PostgreSQL](https://www.postgresql.org/) for reliable database management.
 
 [SQLx](https://github.com/launchbadge/sqlx) for async SQL in Rust.
+
+## Donations
+
+If you find this project useful and would like to support its continued development, you can make a donation via [Buy Me a Coffee](https://buymeacoffee.com/aarambhdevhub).
+
+Thank you for your support!
