@@ -14,10 +14,7 @@ pub struct RegisterUserDto {
         email(message = "Email is invalid")
     )]
     pub email: String,
-    #[validate(
-        length(min = 1, message = "Password is required"),
-        length(min = 6, message = "Password must be at least 6 characters")
-    )]
+    #[validate(length(min = 6, message = "Password must be at least 6 characters"))]
     pub password: String,
 
     #[validate(
@@ -32,10 +29,7 @@ pub struct RegisterUserDto {
 pub struct LoginUserDto {
     #[validate(length(min = 1, message = "Email is required"), email(message = "Email is invalid"))]
     pub email: String,
-    #[validate(
-        length(min = 1, message = "Password is required"),
-        length(min = 6, message = "Password must be at least 6 characters")
-    )]
+    #[validate(length(min = 6, message = "Password must be at least 6 characters"))]
     pub password: String,
 }
 
@@ -50,7 +44,7 @@ pub struct RequestQueryDto {
 #[derive(Debug, Serialize, Deserialize)]
 pub struct FilterUserDto {
     pub id: String,
-    pub name: String,
+    pub name: String, // This should be 'username' to match models.rs
     pub email: String,
     pub role: String,
     pub verified: bool,
@@ -64,7 +58,7 @@ impl FilterUserDto {
     pub fn filter_user(user: &User) -> Self {
         FilterUserDto {
             id: user.id.to_string(),
-            name: user.name.to_owned(),
+            name: user.name.to_owned(), // This should be 'user.username'
             email: user.email.to_owned(),
             verified: user.verified,
             role: user.role.to_str().to_string(),
@@ -129,23 +123,16 @@ fn validate_user_role(role: &UserRole) -> Result<(), validator::ValidationError>
 
 #[derive(Debug, Validate, Default, Clone, Serialize, Deserialize)]
 pub struct UserPasswordUpdateDto {
-    #[validate(
-        length(min = 1, message = "New password is required."),
-        length(min = 6, message = "new password must be at least 6 characters")
-    )]
+    #[validate(length(min = 6, message = "new password must be at least 6 characters"))]
     pub new_password: String,
 
     #[validate(
-        length(min = 1, message = "New password confirm is required."),
         length(min = 6, message = "new password confirm must be at least 6 characters"),
         must_match(other = "new_password", message="new passwords do not match")
     )]
     pub new_password_confirm: String,
 
-    #[validate(
-        length(min = 1, message = "Old password is required."),
-        length(min = 6, message = "Old password must be at least 6 characters")
-    )]
+    #[validate(length(min = 6, message = "Old password must be at least 6 characters"))]
     pub old_password: String,
 }
 
@@ -166,14 +153,10 @@ pub struct ResetPasswordRequestDto {
     #[validate(length(min = 1, message = "Token is required."),)]
     pub token: String,
 
-    #[validate(
-        length(min = 1, message = "New password is required."),
-        length(min = 6, message = "new password must be at least 6 characters")
-    )]
+    #[validate(length(min = 6, message = "new password must be at least 6 characters"))]
     pub new_password: String,
 
     #[validate(
-        length(min = 1, message = "New password confirm is required."),
         length(min = 6, message = "new password confirm must be at least 6 characters"),
         must_match(other = "new_password", message="new passwords do not match")
     )]
