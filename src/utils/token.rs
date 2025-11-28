@@ -31,7 +31,7 @@ pub fn create_token(
 
     let now = Utc::now();
     let iat = now.timestamp() as usize;
-    let exp = (now + Duration::minutes(expires_in_seconds)).timestamp() as usize;
+    let exp = (now + Duration::seconds(expires_in_seconds)).timestamp() as usize;
     let claims = TokenClaims {
         sub: user_id.to_string(),
         iat,
